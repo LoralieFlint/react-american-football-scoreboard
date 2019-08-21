@@ -12,24 +12,6 @@ function App() {
   const [homeScore, setHomeScore] = useState(50);
   const [awayScore, setAwayScore] = useState(22);
 
-  //TODO: home team call backs
-  //TODO: done :)
-  const homeTouchDown = e => {
-    setHomeScore(homeScore + 7);
-  };
-  const homeFieldGoal = e => {
-    setHomeScore(homeScore + 3);
-  };
-
-  //TODO: away team call backs
-  //TODO: done :)
-  const awayTouchDown = e => {
-    setAwayScore(awayScore + 7);
-  };
-  const awayFieldGoal = e => {
-    setAwayScore(awayScore + 3);
-  };
-
   return (
     <div className="container">
       <section className="scoreboard">
@@ -57,18 +39,18 @@ function App() {
             // TODO: STEP 4 - Now we need to attach our state setter functions to click listeners.
             //TODO: done
           }
-          <button className="homeButtons__touchdown" onClick={homeTouchDown}>
+          <button className="homeButtons__touchdown" onClick={() => setHomeScore(homeScore +7)}>
             Home Touchdown
           </button>
-          <button className="homeButtons__fieldGoal" onClick={homeFieldGoal}>
+          <button className="homeButtons__fieldGoal" onClick={() => setHomeScore(homeScore + 3)}>
             Home Field Goal
           </button>
         </div>
         <div className="awayButtons">
-          <button className="awayButtons__touchdown" onClick={awayTouchDown}>
+          <button className="awayButtons__touchdown" onClick={() => setAwayScore(awayScore + 7)}>
             Away Touchdown
           </button>
-          <button className="awayButtons__fieldGoal" onClick={awayFieldGoal}>
+          <button className="awayButtons__fieldGoal" onClick={() => setAwayScore(awayScore + 3)}>
             Away Field Goal
           </button>
         </div>
