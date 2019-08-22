@@ -3,6 +3,16 @@
 import React, { useState } from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
+ 
+//TODO: add some team spirit colors
+//TODO: done :)
+// team colors
+var bgColors = {    "Blue": "#002244",
+                    "Silver": "#B0B7BC",
+                    "Green": "#8CC152",
+                    "Yellow": "#FFB612",
+                    "Gray": "#A5ACAF",
+};
 
 function App() {
   {
@@ -13,11 +23,11 @@ function App() {
   const [awayScore, setAwayScore] = useState(22);
 
   return (
-    <div className="container">
-      <section className="scoreboard">
+    <div className="container"  >
+      <section className="scoreboard" style={{backgroundColor: bgColors.Green}}>
         <div className="topRow">
-          <div className="home">
-            <h2 className="home__name">Lions</h2>
+          <div className="home" style={{backgroundColor: bgColors.Blue}}>
+            <h2 className="home__name" style={{color: bgColors.Silver}}>Patriots</h2>
             {
               // TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state.
               // TODO: done :)
@@ -25,8 +35,8 @@ function App() {
             <div className="home__score">{homeScore}</div>
           </div>
           <div className="timer">15:05</div>
-          <div className="away">
-            <h2 className="away__name">Tigers</h2>
+          <div className="away" style={{backgroundColor: bgColors.Gray}}>
+            <h2 className="away__name" style={{color: bgColors.Yellow}}>Stealers</h2>
             <div className="away__score">{awayScore}</div>
           </div>
         </div>
